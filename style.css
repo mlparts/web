@@ -1,28 +1,74 @@
+
 .chatbox{
     position: fixed;
     z-index: 2;
-    bottom: 40px;
-    right: 40px;
-    height: 70px;
-    width: 70px;
-    background: red;
+    bottom: 0px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .chatbox-top{
+    padding-bottom: 10px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  .chatbox-inner:hover{
+    box-shadow: 0 0.25rem 1rem 0 rgba(0,0,0,.2);
+  }
+  .chatbox-inner{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    height: 40px;
+    width: auto;
+    color: white;
+    padding: 0 20px;
+    background: red;
+    border-radius: 4px 4px 0 0;
     box-shadow: 0 0.25rem 1rem 0 rgba(0,0,0,.05);
-    transition: box-shadow .4s cubic-bezier(.175,.885,.32,1.275)
-}
-.chatbox:hover{
-    box-shadow: 0 0.25rem 1rem 0 rgba(0,0,0,.2);
-}
-.chatbox img{
-    height: 30px;
-    width: 30px;
-}
-    
-@media (max-width: 600px){
+    transition: box-shadow .4s cubic-bezier(.175,.885,.32,1.275);
+  }
+  .chatbox img{
+    height: 24px;
+    width: 24px;
+    margin-right: 10px
+  }
+  
+  @media (max-width: 600px){
     .chatbox{
-    display: none;
+      display: block;
+      
     }
-}
+    .chatbox-top{
+      display: none;
+    }
+    .chatbox-inner{
+      font-size: 0;
+    }
+    .chatbox-inner img{
+      margin: 0;
+    }
+  }
+  
+  .chatbox-top {
+  animation: MoveUpDown 2s linear infinite;  
+  }
+  @keyframes MoveUpDown {
+    0%, 100% {
+      transform:translateY(0);
+    }
+    33% {
+      transform:translateY(5px);
+    }
+      66% {
+      transform:translateY(5px);
+    }
+      100% {
+      transform:translateY(0px);
+    }
+  
+  }
+  
+  
